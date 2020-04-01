@@ -10,7 +10,7 @@
   </parent>
 
   <artifactId>cachet-gating</artifactId>
-  <version>1.0.7-SNAPSHOT</version>
+  <version>1.0.8-SNAPSHOT</version>
   <packaging>hpi</packaging>
   <name>Cachet Gate Plugin</name>
   <description>Plugin to gate jobs based on Cachet resources availability.</description>
@@ -27,7 +27,12 @@
     <developer>
       <id>ggallen</id>
       <name>Greg Allen</name>
-      <email>gallen @redhat.com</email>
+      <email>gallen@redhat.com</email>
+    </developer>
+    <developer>
+      <id>avielyosef</id>
+      <name>Aviel Yosef</name>
+      <email>ayosef@redhat.com</email>
     </developer>
   </developers>
 
@@ -41,18 +46,19 @@
   <repositories>
     <repository>
       <id>repo.jenkins-ci.org</id>
-      <url>http://repo.jenkins-ci.org/public/</url>
+      <url>https://repo.jenkins-ci.org/public/</url>
     </repository>
   </repositories>
 
   <pluginRepositories>
     <pluginRepository>
       <id>repo.jenkins-ci.org</id>
-      <url>http://repo.jenkins-ci.org/public/</url>
+      <url>https://repo.jenkins-ci.org/public/</url>
     </pluginRepository>
   </pluginRepositories>
 
   <properties>
+    <java.level>8</java.level>
     <jenkins.version>2.62</jenkins.version>
     <maven.javadoc.skip>true</maven.javadoc.skip>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -67,14 +73,19 @@
 
   <dependencies>
     <dependency>
+      <groupId>org.jenkins-ci.plugins</groupId>
+      <artifactId>matrix-project</artifactId>
+      <version>1.14</version>
+    </dependency>
+    <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>2.9.6</version>
+      <version>2.9.10.3</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-core</artifactId>
-      <version>2.9.6</version>
+      <version>2.9.10</version>
     </dependency>
     <dependency>
       <groupId>org.apache.commons</groupId>
@@ -178,7 +189,7 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>script-security</artifactId>
-      <version>1.42</version>
+      <version>1.54</version>
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>
